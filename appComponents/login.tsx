@@ -70,6 +70,8 @@ function Login(): React.JSX.Element {
                         marginTop: 80
                     }}> Login</Text>
                 </Pressable>
+
+                
     
 
         </View>

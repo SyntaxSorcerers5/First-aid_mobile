@@ -5,7 +5,9 @@ import Login from './appComponents/login';
 import Registeruser from './appComponents/Generalregister';
 import RegisterEmergency from './appComponents/Emergencyregister';
 import Welcome from './src/components/welcome';
-import RegAs from './src/components/regAs';
+import RegAs from './appComponents/regAs';
+import Selectbot from './appComponents/selectOptionBOT';
+import Moveamong from './appComponents/move';
 
 function App(): React.JSX.Element {
 
@@ -14,7 +16,7 @@ function App(): React.JSX.Element {
         <View style={{backgroundColor:'white', height:'100%'}}>
             
 
-        <RegAs/>
+        <Moveamong/>
 
 
 
