@@ -1,0 +1,62 @@
+#   <NavigationContainer>
+#             <Stack.Navigator>
+#                 <Stack.Screen
+#                     name='Login'
+#                     component={Welcome}
+#                 />
+#                 <Stack.Screen
+#                     name='Home'
+#                     component={Login}
+#                 />
+#             </Stack.Navigator>
+#         </NavigationContainer>
+
+
+
+
+#         <NavigationContainer>
+#             <Stack.Navigator>
+#                 <Stack.Screen
+#                     name='welcome'
+#                     component={Welcome}
+#                 />
+#                 <Stack.Screen
+#                     name='Login'
+#                     component={LoginPage}
+#                 />
+#                 <Stack.Screen
+#                     name='Register'
+#                     component={RegisterPage}
+#                 />
+#                 <Stack.Screen
+#                     name='ComingSoon'
+#                     component={ComingSoon}
+#                 />
+#             </Stack.Navigator>
+#         </NavigationContainer>
+
+
+
+
+#         <View style={{ flexDirection: 'column', backgroundColor: 'white' }}>
+#             <View style={{ flex: 1 }}>
+#                 <View style={{ flexDirection: 'row', backgroundColor: '#FFFFC6' }} >
+#                     <Text style={{
+#                         fontSize: 40,
+#                         color: '#8C05D3',
+#                         flex: 10,
+#                         textAlign: "center"
+#                     }}>
+#                         Advisor Bot</Text>
+#                     <View style={{ flex: 1, flexDirection: 'row', backgroundColor: '#FFFFC6' }} >
+#                         <Image style={{
+#                             width: 50,
+#                             height: 50,
+#                             marginLeft: 50,
+
+#                         }} source={require('../../assets/images/van.png')} />
+#                     </View>
+#                 </View>
+#             </View>
+#         </View>
+

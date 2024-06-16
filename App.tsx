@@ -1,27 +1,81 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import styles from './styles/main';
-import Login from './appComponents/login';
-import Registeruser from './appComponents/Generalregister';
-import RegisterEmergency from './appComponents/Emergencyregister';
-import Welcome from './src/components/welcome';
-import RegAs from './appComponents/regAs';
-import Selectbot from './appComponents/selectOptionBOT';
-import Moveamong from './appComponents/move';
+import { Button, Text, View } from 'react-native';
+import BottomNavBar from './src/components/bottomnav';
+import ComingSoon from './src/pages/ComingSoon';
+import Advisorbot from './src/pages/AdvisorBot';
+import Notify from './src/pages/Notify';
+import Feedback2 from './src/pages/feedbacktwo';
+import Registeruser from './src/pages/Generalregister';
+import RegisterEmergency from './src/pages/Emergencyregister';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Login from './src/pages/Login';
+import RegAs from './src/pages/regAs';
+import Selectbot from './src/pages/selectOptionBOT';
 
+
+const Stack = createNativeStackNavigator();
 function App(): React.JSX.Element {
-
-
     return (
-        <View style={{backgroundColor:'white', height:'100%'}}>
-            
+        <NavigationContainer>
+            <Stack.Navigator>
+                <Stack.Screen
+                    name="Home"
+                    component={Login}
+                    options={{
+                        headerShown: false
+                    }}
+                />
 
-        <Moveamong/>
+                <Stack.Screen
+                    name="Register As"
+                    component={RegAs}
+                    options={{
+                        headerShown: false
+                    }}
+                />
 
+                <Stack.Screen
+                    name="Register User"
+                    component={Registeruser}
+                    options={{
+                        headerShown: false
+                    }}
+                />
 
+                <Stack.Screen
+                    name="Register Emergency"
+                    component={RegisterEmergency}
+                    options={{
+                        headerShown: false
+                    }}
+                />
 
-        </View>
+                <Stack.Screen
+                    name="Option selection"
+                    component={Selectbot}
+                    options={{
+                        headerShown: false
+                    }}
+                />
 
+                <Stack.Screen
+                    name="Notification"
+                    component={Notify}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+
+                <Stack.Screen
+                    name="Advisor bot select first aid"
+                    component={Advisorbot}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+            </Stack.Navigator>
+        </NavigationContainer>
     );
 }
 

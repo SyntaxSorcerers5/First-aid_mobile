@@ -1,13 +1,14 @@
 import { View, Text, Pressable, Alert, Image, SafeAreaView, ScrollView } from 'react-native'
 import React from 'react'
+import BottomNavBar from '../components/bottomnav';
 
 
-function Selectbot(): React.JSX.Element {
+function Selectbot({navigation}): React.JSX.Element {
     return (
 
         <ScrollView>
-            <View style={{ flex: 1, flexDirection: 'column', backgroundColor: 'white' }}>
-                <View style={{ flex: 8 }} >
+            <View style={{flex:1, flexDirection:'column', backgroundColor:'white'}}>
+                <View style={{ flex: 8 }}>
                     <Text style={{
                         fontSize: 30,
                         color: '#8C05D3',
@@ -18,7 +19,7 @@ function Selectbot(): React.JSX.Element {
                         width: 300,
                         height: 300,
                         marginLeft: 50
-                    }} source={require('../assets/images/man.png')} />
+                    }} source={require('../../assets/images/man.png')} />
                 </View>
 
                 <View style={{
@@ -35,13 +36,13 @@ function Selectbot(): React.JSX.Element {
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                        onPress={() => alert("hi 2")}>
+                        onPress={() => navigation.navigate('Advisorbot')}>
                         <Image style={{
                             width: 10,
                             height: 10,
                             flex: 1,
                             padding: 30
-                        }} source={require('../assets/images/Logo.png')} />
+                        }} source={require('../../assets/images/Logo.png')} />
 
                         <Text style={{
                             fontSize: 30,
@@ -82,7 +83,7 @@ function Selectbot(): React.JSX.Element {
                             height: 10,
                             flex: 1,
                             padding: 30
-                        }} source={require('../assets/images/van.png')} />
+                        }} source={require('../../assets/images/van.png')} />
 
                         <Text style={{
                             fontSize: 30,
@@ -119,7 +120,7 @@ function Selectbot(): React.JSX.Element {
                             height: 10,
                             flex: 1,
                             padding: 30
-                        }} source={require('../assets/images/report.png')} />
+                        }} source={require('../../assets/images/report.png')} />
 
                         <Text style={{
                             fontSize: 30,
@@ -157,7 +158,7 @@ function Selectbot(): React.JSX.Element {
                             height: 10,
                             flex: 1,
                             padding: 30
-                        }} source={require('../assets/images/learn.png')} />
+                        }} source={require('../../assets/images/learn.png')} />
 
                         <Text style={{
                             fontSize: 30,
@@ -171,13 +172,9 @@ function Selectbot(): React.JSX.Element {
                             Learn First Aid
                         </Text>
                     </Pressable>
-
-
-
                 </View>
-               
+                <BottomNavBar/>
             </View>
-
         </ScrollView>
 
     );

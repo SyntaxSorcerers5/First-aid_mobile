@@ -1,10 +1,11 @@
 import { View, Text, Pressable, Alert, Image } from 'react-native'
 import React from 'react'
-import Welcome from '../src/components/welcome';
+import Welcome from '../components/welcome';
 
 
-function RegAs(): React.JSX.Element {
+function RegAs({navigation}): React.JSX.Element {
     return (
+        <View style={{ backgroundColor: 'white', height: '100%' }}>
         <View style={{
             flex: 1,
 
@@ -25,14 +26,14 @@ function RegAs(): React.JSX.Element {
                 marginBottom: 40,
                 marginLeft: 20,
                 marginRight: 20
-            }}>
+            }}> 
                 <Pressable style={{
                     flex: 1,
                     flexDirection: "row",
                     justifyContent: "center",
                     alignItems: "center"
                 }}
-                    onPress={() => alert("hi 2")}>
+                    onPress={() => navigation.navigate('Registeruser')}>
                     <Image style={{
                         width: 100,
                         height: 100,
@@ -65,7 +66,7 @@ function RegAs(): React.JSX.Element {
                     justifyContent: "center",
                     alignItems: "center"
                 }}
-                    onPress={() => alert("hi")}>
+                    onPress={() => navigation.navigate('RegisterEmergency')}>
                     <Image style={{
                         width: 100,
                         height: 100,
@@ -82,6 +83,7 @@ function RegAs(): React.JSX.Element {
                 </Pressable>
             </View>
         </View >
+        </View>
     );
 }
 
