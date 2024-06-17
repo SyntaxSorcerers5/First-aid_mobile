@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Alert, Image, SafeAreaView, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity, Alert, Image, SafeAreaView, ScrollView } from 'react-native'
 import React from 'react'
 import BottomNavBar from '../components/bottomnav';
 
@@ -30,7 +30,7 @@ function Selectbot({navigation}): React.JSX.Element {
                     marginLeft: 60,
                     marginRight: 60
                 }}>
-                    <Pressable style={{
+                    <TouchableOpacity style={{
                         flex: 1,
                         flexDirection: "row",
                         justifyContent: "center",
@@ -54,7 +54,7 @@ function Selectbot({navigation}): React.JSX.Element {
                         }}>
                             Advisor Bot
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
 
@@ -71,7 +71,7 @@ function Selectbot({navigation}): React.JSX.Element {
 
 
                 }} >
-                    <Pressable style={{
+                    <TouchableOpacity style={{
                         flex: 1,
                         flexDirection: "row",
                         justifyContent: "center",
@@ -96,7 +96,7 @@ function Selectbot({navigation}): React.JSX.Element {
                         }}>
                             Contact Ambulance
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
 
                 </View>
 
@@ -108,7 +108,7 @@ function Selectbot({navigation}): React.JSX.Element {
                     marginLeft: 60,
                     marginRight: 60
                 }}>
-                    <Pressable style={{
+                    <TouchableOpacity style={{
                         flex: 1,
                         flexDirection: "row",
                         justifyContent: "center",
@@ -133,7 +133,7 @@ function Selectbot({navigation}): React.JSX.Element {
                         }}>
                             First Aid Reports
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
 
 
                 </View>
@@ -146,7 +146,7 @@ function Selectbot({navigation}): React.JSX.Element {
                     marginLeft: 60,
                     marginRight: 60
                 }}>
-                    <Pressable style={{
+                    <TouchableOpacity style={{
                         flex: 1,
                         flexDirection: "row",
                         justifyContent: "center",
@@ -171,7 +171,7 @@ function Selectbot({navigation}): React.JSX.Element {
                         }}>
                             Learn First Aid
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
                 <BottomNavBar/>
             </View>

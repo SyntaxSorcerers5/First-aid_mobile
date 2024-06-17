@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image, Alert } from 'react-native'
+import { View, Text, Pressable, Image, Alert, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 
@@ -40,25 +40,25 @@ const BottomNavBar = ({navigation}) => {
             </View>
 
             <View>
-                <Pressable
+                <TouchableOpacity
                     onPress={() => navigation.navigate("ComingSoon")}>
                     <Image style={{
                         width: 2,
                         height: 2,
                         padding: 30
                     }} source={require('../../assets/images/report.png')} />
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             <View>
-                <Pressable
+                <TouchableOpacity
                     onPress={() => alert("hi 2")}>
                     <Image style={{
                         width: 2,
                         height: 2,
                         padding: 30
                     }} source={require('../../assets/images/learn.png')} />
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </View>
     )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Button, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Welcome from '../components/welcome';
 
 
@@ -84,7 +84,7 @@ function RegisterEmergency({navigation}): React.JSX.Element {
                         placeholder='Password'
                         placeholderTextColor={'#444'}
                     />
-                    <Pressable style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Home')}>
+                    <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Home')}>
                         <Text style={{
                             backgroundColor: '#D21E5F',
                             color: 'white',
@@ -94,7 +94,7 @@ function RegisterEmergency({navigation}): React.JSX.Element {
                             paddingLeft: 30,
                             marginTop: 70
                         }}> Register</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                     <View style={{ backgroundColor: 'white', height: 70 }} />
                 </View>
             </View>

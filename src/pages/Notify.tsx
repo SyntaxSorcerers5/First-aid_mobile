@@ -1,5 +1,5 @@
 
-import { View, Text, Pressable, Alert, Image, ScrollView } from 'react-native'
+import { View, Text, Pressable, Alert, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 
@@ -23,7 +23,7 @@ function Notify(): React.JSX.Element {
                             marginLeft: 60,
                             marginRight: 60
                         }}>
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -48,7 +48,7 @@ function Notify(): React.JSX.Element {
                                 }}>
                                     Nature of Accident
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
 
 
@@ -60,7 +60,7 @@ function Notify(): React.JSX.Element {
                             marginLeft: 60,
                             marginRight: 60
                         }}>
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -84,7 +84,7 @@ function Notify(): React.JSX.Element {
                                 }}>
                                     View Location
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
 
                         <View style={{
@@ -96,7 +96,7 @@ function Notify(): React.JSX.Element {
                             marginRight: 60,
                         }}>
 
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -120,7 +120,7 @@ function Notify(): React.JSX.Element {
                                 }}>
                                     Call to Patient
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
                     </View>
 
@@ -151,7 +151,7 @@ function Notify(): React.JSX.Element {
                                 alignItems: 'center'
                             }}>
 
-                                <Pressable style={{
+                                <TouchableOpacity style={{
                                     flex: 1,
                                     flexDirection: "row",
                                     justifyContent: "center",
@@ -165,7 +165,7 @@ function Notify(): React.JSX.Element {
                                     }}>
                                         Accept
                                     </Text>
-                                </Pressable>
+                                </TouchableOpacity>
                             </View>
                         </View>
 
@@ -181,7 +181,7 @@ function Notify(): React.JSX.Element {
                                 alignItems: 'center'
                             }}>
 
-                                <Pressable style={{
+                                <TouchableOpacity style={{
                                     flex: 1,
                                     flexDirection: "row",
                                     justifyContent: "center",
@@ -195,7 +195,7 @@ function Notify(): React.JSX.Element {
                                     }}>
                                         Decline
                                     </Text>
-                                </Pressable>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </View>

@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Alert, Image, ScrollView, TextInput } from 'react-native'
+import { View, Text, Pressable, Alert, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import BottomNavBar from '../components/bottomnav'
 
@@ -64,7 +64,7 @@ function Feedback2(): React.JSX.Element {
                         marginVertical:1,
                         marginHorizontal:1,
                     }} >
-                        <Pressable style={{
+                        <TouchableOpacity style={{
                             flex: 1,
                             flexDirection: "row",
                             justifyContent: "center",
@@ -81,7 +81,7 @@ function Feedback2(): React.JSX.Element {
                             }}>
                                 Yes
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
 
                     <View style={{
@@ -89,7 +89,7 @@ function Feedback2(): React.JSX.Element {
                         backgroundColor: '#8C05D3',
                         borderRadius: 20,
                     }} >
-                        <Pressable style={{
+                        <TouchableOpacity style={{
                             flex: 1,
                             flexDirection: "row",
                             justifyContent: "center",
@@ -103,7 +103,7 @@ function Feedback2(): React.JSX.Element {
                             }}>
                                 No
                             </Text>
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
@@ -127,7 +127,7 @@ function Feedback2(): React.JSX.Element {
                     marginLeft: 60,
                     marginRight: 60
                 }}>
-                    <Pressable style={{
+                    <TouchableOpacity style={{
                         flex: 1,
                         flexDirection: "row",
                         justifyContent: "center",
@@ -145,7 +145,7 @@ function Feedback2(): React.JSX.Element {
                         }}>
                             Yes, Very easy
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{
@@ -156,7 +156,7 @@ function Feedback2(): React.JSX.Element {
                     marginLeft: 60,
                     marginRight: 60
                 }}>
-                    <Pressable style={{
+                    <TouchableOpacity style={{
                         flex: 1,
                         flexDirection: "row",
                         justifyContent: "center",
@@ -173,7 +173,7 @@ function Feedback2(): React.JSX.Element {
                         }}>
                             Yes, Somewhat Easy
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{
@@ -184,7 +184,7 @@ function Feedback2(): React.JSX.Element {
                     marginLeft: 60,
                     marginRight: 60
                 }}>
-                    <Pressable style={{
+                    <TouchableOpacity style={{
                         flex: 1,
                         flexDirection: "row",
                         justifyContent: "center",
@@ -201,7 +201,7 @@ function Feedback2(): React.JSX.Element {
                         }}>
                             No, Somewhat Difficult
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{
@@ -212,7 +212,7 @@ function Feedback2(): React.JSX.Element {
                     marginLeft: 60,
                     marginRight: 60
                 }}>
-                    <Pressable style={{
+                    <TouchableOpacity style={{
                         flex: 1,
                         flexDirection: "row",
                         justifyContent: "center",
@@ -229,7 +229,7 @@ function Feedback2(): React.JSX.Element {
                         }}>
                             No, Very Difficult
                         </Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
@@ -321,7 +321,7 @@ function Feedback2(): React.JSX.Element {
 
 
                 <View style={{ flex: 1, backgroundColor: 'white' }} >
-                    <Pressable style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Login')}>
+                    <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Login')}>
                         <Text style={{
                             backgroundColor: '#D21E5F',
                             color: 'white',
@@ -331,7 +331,7 @@ function Feedback2(): React.JSX.Element {
                             paddingLeft: 30,
                             marginTop: 15
                         }}> Login</Text>
-                    </Pressable>
+                    </TouchableOpacity>
                 </View>
 
 

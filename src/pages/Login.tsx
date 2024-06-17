@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Alert, Button, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
+import { Alert, Button, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Welcome from '../components/welcome';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useNavigation } from '@react-navigation/native';
@@ -58,19 +58,19 @@ function Login({navigation}): React.JSX.Element {
                     placeholderTextColor={'#444'}
                 />
 
-     <Pressable style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Option selection')}>
+     <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Option selection')}>
                     <Text style={{
                         backgroundColor: '#D21E5F',
                         color: 'white',
-                        fontSize: 70,
+                        fontSize: 60,
                         alignItems: 'center',
-                        borderRadius: 40,
+                        borderRadius: 30,
                         paddingLeft: 30,
                         marginTop: 80
                     }}> Login</Text>
-                </Pressable>
+                </TouchableOpacity>
 
-                <Pressable onPress={() => navigation.navigate('Register As')}>
+                <TouchableOpacity onPress={() => navigation.navigate('Register As')}>
                     <Text style={{
                         backgroundColor: 'white',
                         color: '#8C05D3',
@@ -79,7 +79,7 @@ function Login({navigation}): React.JSX.Element {
                         marginLeft: 50,
                         marginTop: 80
                     }}> New user? Register first</Text>
-                </Pressable>
+                </TouchableOpacity>
 
                 <View style={{ backgroundColor: 'white', height: 100 }} />
             </View>

@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Alert, Image } from 'react-native'
+import { View, Text, Pressable, Alert, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import Welcome from '../components/welcome';
 
@@ -22,12 +22,12 @@ function RegAs({navigation}): React.JSX.Element {
             <View style={{
                 flex: 2,
                 backgroundColor: '#FFFFC6',
-                borderRadius: 50,
+                borderRadius: 30,
                 marginBottom: 40,
                 marginLeft: 20,
                 marginRight: 20
             }}> 
-                <Pressable style={{
+                <TouchableOpacity style={{
                     flex: 1,
                     flexDirection: "row",
                     justifyContent: "center",
@@ -50,17 +50,17 @@ function RegAs({navigation}): React.JSX.Element {
                     }}>
                         General User
                     </Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
 
             <View style={{
                 flex: 2, backgroundColor: '#FFFFC6',
-                borderRadius: 50,
+                borderRadius: 30,
                 marginBottom: 40,
                 marginLeft: 20,
                 marginRight: 20
             }}>
-                <Pressable style={{
+                <TouchableOpacity style={{
                     flex: 1,
                     flexDirection: "row",
                     justifyContent: "center",
@@ -80,7 +80,7 @@ function RegAs({navigation}): React.JSX.Element {
                         flex: 5,
                         padding: 20
                     }}>Emergency Service</Text>
-                </Pressable>
+                </TouchableOpacity>
             </View>
         </View >
         </View>

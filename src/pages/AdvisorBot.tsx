@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable, Alert, Image, SafeAreaView, ScrollView, TextInput } from 'react-native'
+import { View, Text, Pressable, Alert, Image, SafeAreaView, ScrollView, TextInput, TouchableOpacity } from 'react-native'
 
 
 
@@ -60,7 +60,7 @@ function Advisorbot(): React.JSX.Element {
                     <View style={{ flex: 3, backgroundColor: 'white' }} >
 
                         <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }}>
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -80,9 +80,9 @@ function Advisorbot(): React.JSX.Element {
                                 }}>
                                     Bleeding
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
 
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -103,11 +103,11 @@ function Advisorbot(): React.JSX.Element {
                                 }}>
                                     Fainting
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
 
                         <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }}>
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -127,9 +127,9 @@ function Advisorbot(): React.JSX.Element {
                                 }}>
                                     Shock
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
 
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -150,11 +150,11 @@ function Advisorbot(): React.JSX.Element {
                                 }}>
                                     Fractures
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
 
                         <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }}>
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -174,9 +174,9 @@ function Advisorbot(): React.JSX.Element {
                                 }}>
                                     Burn
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
 
-                            <Pressable style={{
+                            <TouchableOpacity style={{
                                 flex: 1,
                                 flexDirection: "row",
                                 justifyContent: "center",
@@ -197,7 +197,7 @@ function Advisorbot(): React.JSX.Element {
                                 }}>
                                     Drowning
                                 </Text>
-                            </Pressable>
+                            </TouchableOpacity>
                         </View>
                     </View>
 
@@ -221,7 +221,7 @@ function Advisorbot(): React.JSX.Element {
                             placeholder='Type a message'
                             placeholderTextColor={'#444'} />
 
-                        <Pressable style={{
+                        <TouchableOpacity style={{
                             flex: 2,
                             flexDirection: "row",
 
@@ -233,7 +233,7 @@ function Advisorbot(): React.JSX.Element {
                                 flex: 1,
                                 paddingTop: 80
                             }} source={require('../../assets/images/sendmsg.png')} />
-                        </Pressable>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
