@@ -70,7 +70,7 @@ function Login({navigation}): React.JSX.Element {
                     }}> Login</Text>
                 </Pressable>
 
-                <Pressable onPress={() => navigation.navigate('RegAs')}>
+                <Pressable onPress={() => navigation.navigate('Register As')}>
                     <Text style={{
                         backgroundColor: 'white',
                         color: '#8C05D3',

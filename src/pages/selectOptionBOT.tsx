@@ -36,7 +36,7 @@ function Selectbot({navigation}): React.JSX.Element {
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                        onPress={() => navigation.navigate('Advisorbot')}>
+                        onPress={() => navigation.navigate('Advisor bot select first aid')}>
                         <Image style={{
                             width: 10,
                             height: 10,

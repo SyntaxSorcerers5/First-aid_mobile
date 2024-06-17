@@ -33,7 +33,7 @@ function RegAs({navigation}): React.JSX.Element {
                     justifyContent: "center",
                     alignItems: "center"
                 }}
-                    onPress={() => navigation.navigate('Registeruser')}>
+                    onPress={() => navigation.navigate('Register User')}>
                     <Image style={{
                         width: 100,
                         height: 100,
@@ -66,7 +66,7 @@ function RegAs({navigation}): React.JSX.Element {
                     justifyContent: "center",
                     alignItems: "center"
                 }}
-                    onPress={() => navigation.navigate('RegisterEmergency')}>
+                    onPress={() => navigation.navigate('Register Emergency')}>
                     <Image style={{
                         width: 100,
                         height: 100,

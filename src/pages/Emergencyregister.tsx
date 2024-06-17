@@ -84,7 +84,7 @@ function RegisterEmergency({navigation}): React.JSX.Element {
                         placeholder='Password'
                         placeholderTextColor={'#444'}
                     />
-                    <Pressable style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Login')}>
+                    <Pressable style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Home')}>
                         <Text style={{
                             backgroundColor: '#D21E5F',
                             color: 'white',

@@ -8,7 +8,7 @@ const BottomNavBar = ({navigation}) => {
 
             <View>  
                 <Pressable
-                    onPress={() => navigation.navigate("Selectbot")}>
+                    onPress={() => navigation.navigate("Option selection")}>
                     <Image style={{
                         width: 2,
                         height: 2,
