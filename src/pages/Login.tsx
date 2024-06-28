@@ -3,52 +3,54 @@ import { Alert, Button, Pressable, ScrollView, Text, TextInput, TouchableOpacity
 import Welcome from '../components/welcome';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useNavigation } from '@react-navigation/native';
-
 import { users } from '../utils/data';
 
-function Login({navigation}): React.JSX.Element {
+function Login({ navigation }): React.JSX.Element {
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
 
-    function OnUsernameChanged(changedUsername) {
-        setUsername(changedUsername)
-
+    function onUsernameChanged(changedUsername) {
+        setUsername(changedUsername);
     }
-    function OnPassswordChanged(changedPassword) {
-        setPassword(changedPassword)
 
+    function onPasswordChanged(changedPassword) {
+        setPassword(changedPassword);
     }
-    const [username, setUsername] = useState()
-    const [Password, setPassword] = useState()
 
+    function onClickLogin() {
+        if (!username) {
+            alert("Username is required");
+            return;
+        }
 
-    function onClickLogin(){
-        const foundUser = users.find(user => user.username == username);
+        if (!password) {
+            alert("Password is required");
+            return;
+        }
 
-        if( foundUser == undefined){
-            //  Did not find a matching user.
+        const foundUser = users.find(user => user.username === username);
+
+        if (!foundUser) {
             alert("User not found");
-            return
+            return;
         }
 
-        if(foundUser.password != Password){
+        if (foundUser.password !== password) {
             alert("Invalid password");
-            return
+            return;
         }
 
-        if(foundUser.usertype == "general"){
-            navigation.navigate("Option selection")
-        }else {
-            alert("Emergy user apge");
+        if (foundUser.usertype === "general") {
+            navigation.navigate("Option selection");
+        } else {
+            alert("Emergency user page");
             // navigation.navigate("Option selection")
         }
-
-
-
     }
 
     return (
-    
         <ScrollView>
-            <View style={{ backgroundColor: 'white' }} >
+            <View style={{ backgroundColor: 'white' }}>
                 <Welcome />
                 <TextInput
                     style={{
@@ -61,63 +63,64 @@ function Login({navigation}): React.JSX.Element {
                         paddingLeft: 10,
                         marginLeft: 20
                     }}
-
-                    onChangeText={OnUsernameChanged}
+                    onChangeText={onUsernameChanged}
                     placeholder='Username'
                     placeholderTextColor={'#444'}
-
+                    value={username}
                 />
-
-                <TextInput style={{
-                    backgroundColor: '#FFFFC6',
-                    color: '#000',
-                    width: 390,
-                    height: 50,
-                    marginTop: 50,
-                    borderRadius: 20,
-                    paddingLeft: 10,
-                    marginLeft: 20
-                }}
-
-                    onChangeText={OnPassswordChanged}
+                <TextInput
+                    style={{
+                        backgroundColor: '#FFFFC6',
+                        color: '#000',
+                        width: 390,
+                        height: 50,
+                        marginTop: 50,
+                        borderRadius: 20,
+                        paddingLeft: 10,
+                        marginLeft: 20
+                    }}
+                    onChangeText={onPasswordChanged}
                     placeholder='Password'
                     placeholderTextColor={'#444'}
+                    secureTextEntry={true}
+                    value={password}
                 />
-
-                <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }}
-                    onPress={onClickLogin}>
-                    <Text style={{
-                        backgroundColor: '#D21E5F',
-                        color: 'white',
-                        fontSize: 60,
-                        alignItems: 'center',
-                        borderRadius: 30,
-                        paddingLeft: 30,
-                        marginTop: 80
-                    }}> Login</Text>
+                <TouchableOpacity
+                    style={{ marginLeft: 80, marginRight: 80 }}
+                    onPress={onClickLogin}
+                >
+                    <Text
+                        style={{
+                            backgroundColor: '#D21E5F',
+                            color: 'white',
+                            fontSize: 60,
+                            alignItems: 'center',
+                            borderRadius: 30,
+                            paddingLeft: 30,
+                            marginTop: 80
+                        }}
+                    >
+                        Login
+                    </Text>
                 </TouchableOpacity>
-
-                <TouchableOpacity onPress={() =>{
-                         navigation.navigate('Register As')
-
-                }
-                     }>
-                    <Text style={{
-                        backgroundColor: 'white',
-                        color: '#8C05D3',
-                        fontSize: 30,
-                        alignItems: 'center',
-                        marginLeft: 50,
-                        marginTop: 80
-                    }}> New user? Register first</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Register As')}>
+                    <Text
+                        style={{
+                            backgroundColor: 'white',
+                            color: '#8C05D3',
+                            fontSize: 30,
+                            alignItems: 'center',
+                            marginLeft: 50,
+                            marginTop: 80
+                        }}
+                    >
+                        New user? Register first
+                    </Text>
                 </TouchableOpacity>
-
                 <View style={{ backgroundColor: 'white', height: 100 }} />
             </View>
         </ScrollView>
-
     );
 }
-
 
 export default Login;
