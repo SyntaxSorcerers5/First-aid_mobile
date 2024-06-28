@@ -1,20 +1,21 @@
-import { View, Text, Pressable, Alert, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native'
-import React, { useState } from 'react'
-import BottomNavBar from '../components/bottomnav'
+import { View, Text, Image, ScrollView, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import BottomNavBar from '../components/bottomnav';
 
+function Feedback(): React.JSX.Element {
+    const [selectedQ1, setSelectedQ1] = useState(null);
+    const [selectedQ2, setSelectedQ2] = useState(null);
+    const [message1, setMessage1] = useState('');
+    const [message2, setMessage2] = useState('');
 
+    const handleQ1Select = (option) => {
+        setSelectedQ1(option);
+    };
 
-function Feedback2(): React.JSX.Element {
-    function OnFeedbackChanged1(changedFeedback1) {
-        setMessage(changedFeedback1)
-    }
+    const handleQ2Select = (option) => {
+        setSelectedQ2(option);
+    };
 
-    function OnFeedbackChanged2(changedFeedback2) {
-        setMessage(changedFeedback2)
-    }
-
-
-    const [Message, setMessage] = useState()
     return (
         <ScrollView>
             <View style={{ flex: 1, backgroundColor: 'white' }}>
@@ -56,288 +57,226 @@ function Feedback2(): React.JSX.Element {
                 </View>
 
                 {/* Q1 Answer */}
-                <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }}>
-                    <View style={{
-                        flex: 1,
-                        backgroundColor: '#8C05D3',
-                        borderRadius: 20,
-                        marginVertical: 1,
-                        marginHorizontal: 1,
-                    }} >
-                        <TouchableOpacity style={{
-                            flex: 1,
-                            flexDirection: "row",
-                            justifyContent: "center",
-                            alignItems: "center"
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 20 }}>
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor: selectedQ1 === 'Yes' ? 'red' : '#8C05D3',
+                            borderRadius: 20,
+                            width: '40%',
+                            alignItems: 'center',
+                            padding: 10
                         }}
-                            onPress={() => alert("hi 2")}>
+                        onPress={() => handleQ1Select('Yes')}
+                    >
+                        <Text style={{
+                            fontSize: 15,
+                            color: 'white'
+                        }}>
+                            Yes
+                        </Text>
+                    </TouchableOpacity>
 
-                            <Text style={{
-                                fontSize: 15,
-                                color: 'white',
-                                paddingLeft: 10,
-                                flex: 5,
-                                padding: 20,
-                            }}>
-                                Yes
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-
-                    <View style={{
-                        flex: 1,
-                        backgroundColor: '#8C05D3',
-                        borderRadius: 20,
-                    }} >
-                        <TouchableOpacity style={{
-                            flex: 1,
-                            flexDirection: "row",
-                            justifyContent: "center",
-                            alignItems: "center"
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor: selectedQ1 === 'No' ? 'red' : '#8C05D3',
+                            borderRadius: 20,
+                            width: '40%',
+                            alignItems: 'center',
+                            padding: 10
                         }}
-                            onPress={() => alert("hi 2")}>
-
-                            <Text style={{
-                                fontSize: 15,
-                                color: 'white',
-                            }}>
-                                No
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
+                        onPress={() => handleQ1Select('No')}
+                    >
+                        <Text style={{
+                            fontSize: 15,
+                            color: 'white'
+                        }}>
+                            No
+                        </Text>
+                    </TouchableOpacity>
                 </View>
-
 
                 {/* Q2 */}
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
                     <Text style={{
                         fontSize: 20,
                         color: '#8C05D3',
-                        paddingLeft: 20
+                        paddingLeft: 20,
+                        paddingBottom: 10,
                     }}>
-                        2 . Did you find the app easy to navigate and use?
+                        2. Did you find the app easy to navigate and use?
                     </Text>
                 </View>
 
-                <View style={{
-                    flex: 2,
-                    backgroundColor: '#8C05D3',
-                    borderRadius: 20,
-                    marginBottom: 40,
-                    marginLeft: 60,
-                    marginRight: 60
-                }}>
-                    <TouchableOpacity style={{
-                        flex: 1,
-                        flexDirection: "row",
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}
-                        onPress={() => alert("hi 2")}>
-
+                {/* Q2 Answer */}
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 20 }}>
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor: selectedQ2 === 'YesVeryEasy' ? 'red' : '#8C05D3',
+                            borderRadius: 20,
+                            width: '40%',
+                            alignItems: 'center',
+                            padding: 10
+                        }}
+                        onPress={() => handleQ2Select('YesVeryEasy')}
+                    >
                         <Text style={{
                             fontSize: 15,
-                            color: 'white',
-                            paddingLeft: 10,
-                            flex: 5,
-                            padding: 20,
-
+                            color: 'white'
                         }}>
-                            Yes, Very easy
+                            Yes, Very Easy
                         </Text>
                     </TouchableOpacity>
-                </View>
 
-                <View style={{
-                    flex: 2,
-                    backgroundColor: '#8C05D3',
-                    borderRadius: 20,
-                    marginBottom: 40,
-                    marginLeft: 60,
-                    marginRight: 60
-                }}>
-                    <TouchableOpacity style={{
-                        flex: 1,
-                        flexDirection: "row",
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}
-                        onPress={() => alert("hi 2")}>
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor: selectedQ2 === 'YesSomewhatEasy' ? 'red' : '#8C05D3',
+                            borderRadius: 20,
+                            width: '40%',
+                            alignItems: 'center',
+                            padding: 10
+                        }}
+                        onPress={() => handleQ2Select('YesSomewhatEasy')}
+                    >
                         <Text style={{
                             fontSize: 15,
-                            color: 'white',
-                            paddingLeft: 10,
-                            flex: 5,
-                            padding: 20,
-
+                            color: 'white'
                         }}>
                             Yes, Somewhat Easy
                         </Text>
                     </TouchableOpacity>
                 </View>
 
-                <View style={{
-                    flex: 2,
-                    backgroundColor: '#8C05D3',
-                    borderRadius: 20,
-                    marginBottom: 40,
-                    marginLeft: 60,
-                    marginRight: 60
-                }}>
-                    <TouchableOpacity style={{
-                        flex: 1,
-                        flexDirection: "row",
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}
-                        onPress={() => alert("hi 2")}>
+                <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginVertical: 20 }}>
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor: selectedQ2 === 'NoSomewhatDifficult' ? 'red' : '#8C05D3',
+                            borderRadius: 20,
+                            width: '40%',
+                            alignItems: 'center',
+                            padding: 10
+                        }}
+                        onPress={() => handleQ2Select('NoSomewhatDifficult')}
+                    >
                         <Text style={{
                             fontSize: 15,
-                            color: 'white',
-                            paddingLeft: 10,
-                            flex: 5,
-                            padding: 20,
-
+                            color: 'white'
                         }}>
                             No, Somewhat Difficult
                         </Text>
                     </TouchableOpacity>
-                </View>
 
-                <View style={{
-                    flex: 2,
-                    backgroundColor: '#8C05D3',
-                    borderRadius: 20,
-                    marginBottom: 40,
-                    marginLeft: 60,
-                    marginRight: 60
-                }}>
-                    <TouchableOpacity style={{
-                        flex: 1,
-                        flexDirection: "row",
-                        justifyContent: "center",
-                        alignItems: "center"
-                    }}
-                        onPress={() => alert("hi 2")}>
+                    <TouchableOpacity
+                        style={{
+                            backgroundColor: selectedQ2 === 'NoVeryDifficult' ? 'red' : '#8C05D3',
+                            borderRadius: 20,
+                            width: '40%',
+                            alignItems: 'center',
+                            padding: 10
+                        }}
+                        onPress={() => handleQ2Select('NoVeryDifficult')}
+                    >
                         <Text style={{
                             fontSize: 15,
-                            color: 'white',
-                            paddingLeft: 10,
-                            flex: 5,
-                            padding: 20,
-
+                            color: 'white'
                         }}>
                             No, Very Difficult
                         </Text>
                     </TouchableOpacity>
                 </View>
 
-                <View style={{ flex: 1, backgroundColor: 'white' }}>
+                {/* Q3 */}
+                <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
                     <Text style={{
                         fontSize: 20,
                         color: '#8C05D3',
-                        paddingLeft: 15
+                        paddingLeft: 20,
+                        paddingBottom: 10,
                     }}>
-                        3.Do you have any suggestions for improving the app's
-                        functionality or user experience?
+                        3. Do you have any suggestions for improving the app's functionality or user experience?
                     </Text>
-                </View>
-
-                <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }} >
                     <TextInput
                         style={{
                             backgroundColor: '#FFFFC6',
                             color: 'black',
-                            width: 370,
+                            width: '90%',
                             height: 70,
-                            marginTop: 10,
-                            borderRadius: 30,
-                            marginLeft: 20,
-                            marginRight: 20,
-                            paddingLeft: 50,
-                            fontSize: 25,
-                            flex: 9
+                            borderRadius: 20,
+                            margin: 20,
+                            paddingLeft: 20,
+                            fontSize: 18,
+                            alignSelf: 'center'
                         }}
-
-                        onChangeText={OnFeedbackChanged1}
-                        placeholder='Type a message'
-                        placeholderTextColor={'#444'} />
+                        onChangeText={setMessage1}
+                        placeholder='Type your suggestions here'
+                        placeholderTextColor={'#444'}
+                    />
                 </View>
 
-                <View style={{ flex: 1, backgroundColor: 'white' }}>
+                {/* Q4 */}
+                <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
                     <Text style={{
                         fontSize: 20,
                         color: '#8C05D3',
-                        paddingLeft: 15
+                        paddingLeft: 20,
+                        paddingBottom: 10,
                     }}>
-                        4. What is the Rate you can give about app?
+                        4. What is the rate you can give about the app?
                     </Text>
+                    <View style={{ flexDirection: 'row', justifyContent: 'center', marginVertical: 20 }}>
+                        {/* Star Rating Placeholder */}
+                        <Text style={{ fontSize: 30, color: 'gold' }}>⭐⭐⭐⭐⭐</Text>
+                    </View>
                 </View>
 
-                <View style={{ flex: 1, backgroundColor: 'white' }}>
-                    <Text style={{
-                        fontSize: 20,
-                        color: 'red',
-                        paddingLeft: 15
-                    }}>
-                        Five stars come here
-                    </Text>
-                </View>
-
-                <View style={{ flex: 1, backgroundColor: 'white' }}>
+                {/* Q5 */}
+                <View style={{ flex: 1, backgroundColor: 'white', paddingTop: 20 }}>
                     <Text style={{
                         fontSize: 20,
                         color: '#8C05D3',
-                        paddingLeft: 15
+                        paddingLeft: 20,
+                        paddingBottom: 10,
                     }}>
-                        5.Do you have any suggestions for improving the app's
-                        functionality or user experience?
+                        5. Do you have any additional comments or feedback?
                     </Text>
-                </View>
-
-
-
-
-                <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }} >
                     <TextInput
                         style={{
                             backgroundColor: '#FFFFC6',
                             color: 'black',
-                            width: 370,
+                            width: '90%',
                             height: 70,
-                            marginTop: 10,
-                            borderRadius: 30,
-                            marginLeft: 20,
-                            marginRight: 20,
-                            paddingLeft: 50,
-                            fontSize: 25,
-                            flex: 9
+                            borderRadius: 20,
+                            margin: 20,
+                            paddingLeft: 20,
+                            fontSize: 18,
+                            alignSelf: 'center'
                         }}
-
-                        onChangeText={OnFeedbackChanged2}
-                        placeholder='Type a message'
-                        placeholderTextColor={'#444'} />
+                        onChangeText={setMessage2}
+                        placeholder='Type your comments here'
+                        placeholderTextColor={'#444'}
+                    />
                 </View>
 
-
-                <View style={{ flex: 1, backgroundColor: 'white' }} >
-                    <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Login')}>
+                {/* Save Button */}
+                <View style={{ flex: 1, backgroundColor: 'white', paddingBottom: 40 }}>
+                    <TouchableOpacity style={{
+                        backgroundColor: '#D21E5F',
+                        borderRadius: 40,
+                        margin: 40,
+                        padding: 10,
+                        alignItems: 'center'
+                    }} onPress={() => alert("Feedback Saved!")}>
                         <Text style={{
-                            backgroundColor: '#D21E5F',
                             color: 'white',
-                            fontSize: 70,
-                            alignItems: 'center',
-                            borderRadius: 40,
-                            paddingLeft: 30,
-                            marginTop: 15
-                        }}> Login</Text>
+                            fontSize: 20,
+                            textAlign: 'center'
+                        }}>
+                            Save
+                        </Text>
                     </TouchableOpacity>
                 </View>
             </View>
         </ScrollView>
-
     );
 }
 
-
-export default Feedback2;
+export default Feedback;

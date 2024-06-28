@@ -1,17 +1,11 @@
 import { NavigationContainer } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, Text, Pressable, Alert, Image, SafeAreaView, ScrollView, TextInput, TouchableOpacity } from 'react-native'
+import BottomNavBar from '../components/bottomnav';
 
 
 
-function Advisorbot({navigation}): React.JSX.Element {
-
-    function OnMessageChanged(changedMessage) {
-        setMessage(changedMessage)
-    }
-
-    const [Message, setMessage] = useState()
-
+function Learn({navigation}): React.JSX.Element {
 
 
     return (
@@ -21,9 +15,10 @@ function Advisorbot({navigation}): React.JSX.Element {
 
                 <View style={{ flex: 1, backgroundColor: 'white' }}>
 
-                    <View style={{ flex: 1, backgroundColor: '#FFFFC6', flexDirection: 'row', borderBottomLeftRadius: 70, borderBottomRightRadius: 70 }} >
+                    <View style={{ flex: 1, backgroundColor: '#FFFFC6', flexDirection: 'row', 
+                        borderBottomLeftRadius: 100, borderBottomRightRadius: 100 }} >
                         <Text style={{
-                            fontSize: 40,
+                            fontSize: 50,
                             color: '#8C05D3',
                             marginLeft: 60,
                             flex: 3,
@@ -32,7 +27,7 @@ function Advisorbot({navigation}): React.JSX.Element {
 
 
                         }}>
-                            Advisor Bot</Text>
+                            Learn First Aid</Text>
                         <Image style={{
                             flex: 1,
                             width: 90,
@@ -44,13 +39,13 @@ function Advisorbot({navigation}): React.JSX.Element {
 
                     <View style={{ flex: 2, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' }} >
                         <Image style={{
-                            width: 200,
-                            height: 200,
+                            width: 100,
+                            height: 100,
                         }} source={require('../../assets/images/Logo.png')} />
                     </View>
 
 
-                    <View style={{ flex: 1, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' }} >
+                    <View style={{ flex: 3, backgroundColor: 'white', justifyContent: 'center', alignItems: 'center' }} >
                         <Text style={{
                             fontSize: 40,
                             color: '#8C05D3',
@@ -58,7 +53,7 @@ function Advisorbot({navigation}): React.JSX.Element {
                             How Can I Help You ? </Text>
                     </View>
 
-                    <View style={{ flex: 3, backgroundColor: 'white' }} >
+                    <View style={{ flex: 8, backgroundColor: 'white' }} >
 
                         <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }}>
                             <TouchableOpacity style={{
@@ -201,41 +196,6 @@ function Advisorbot({navigation}): React.JSX.Element {
                             </TouchableOpacity>
                         </View>
                     </View>
-
-                    <View style={{ flex: 1, backgroundColor: 'white', flexDirection: 'row' }} >
-                        <TextInput
-                            style={{
-                                backgroundColor: '#FFFFC6',
-                                color: 'black',
-                                width: 370,
-                                height: 70,
-                                marginTop: 10,
-                                borderRadius: 30,
-                                marginLeft: 20,
-                                marginRight: 20,
-                                paddingLeft: 50,
-                                fontSize: 25,
-                                flex: 9
-                            }}
-
-                            onChangeText={OnMessageChanged}
-                            placeholder='Type a message'
-                            placeholderTextColor={'#444'} />
-
-                        <TouchableOpacity style={{
-                            flex: 2,
-                            flexDirection: "row",
-
-                        }}
-                            onPress={() => alert("hi 2")}>
-                            <Image style={{
-                                width: 20,
-                                height: 60,
-                                flex: 1,
-                                paddingTop: 80
-                            }} source={require('../../assets/images/sendmsg.png')} />
-                        </TouchableOpacity>
-                    </View>
                 </View>
 
             </ScrollView>
@@ -258,4 +218,4 @@ function Advisorbot({navigation}): React.JSX.Element {
 }
 
 
-export default Advisorbot;
+export default Learn;

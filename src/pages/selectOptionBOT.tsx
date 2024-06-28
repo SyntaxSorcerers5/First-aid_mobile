@@ -36,7 +36,7 @@ function Selectbot({navigation}): React.JSX.Element {
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                        onPress={() => navigation.navigate('Advisor bot select first aid')}>
+                        onPress={() =>  alert("chatbot interface should come here")}>
                         <Image style={{
                             width: 10,
                             height: 10,
@@ -49,7 +49,7 @@ function Selectbot({navigation}): React.JSX.Element {
                             color: 'white',
                             paddingLeft: 10,
                             flex: 5,
-                            padding: 20,
+                            padding: 30,
 
                         }}>
                             Advisor Bot
@@ -83,7 +83,7 @@ function Selectbot({navigation}): React.JSX.Element {
                             height: 10,
                             flex: 1,
                             padding: 30
-                        }} source={require('../../assets/images/van.png')} />
+                        }} source={require('../../assets/images/van2.png')} />
 
                         <Text style={{
                             fontSize: 30,
@@ -91,7 +91,7 @@ function Selectbot({navigation}): React.JSX.Element {
                             paddingLeft: 10,
                             flex: 5,
                             padding: 20,
-                            paddingTop: 5
+                            paddingTop: 12
 
                         }}>
                             Contact Ambulance
@@ -128,7 +128,7 @@ function Selectbot({navigation}): React.JSX.Element {
                             paddingLeft: 10,
                             flex: 5,
                             padding: 20,
-                            paddingTop: 4
+                            paddingTop: 12
 
                         }}>
                             First Aid Reports
@@ -152,7 +152,7 @@ function Selectbot({navigation}): React.JSX.Element {
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                        onPress={() => alert("hi 2")}>
+                        onPress={() => navigation.navigate('Learn first aid')}>
                         <Image style={{
                             width: 10,
                             height: 10,
@@ -166,14 +166,48 @@ function Selectbot({navigation}): React.JSX.Element {
                             paddingLeft: 10,
                             flex: 5,
                             padding: 20,
-                            paddingTop: 4
+                            paddingTop: 12
 
                         }}>
                             Learn First Aid
                         </Text>
                     </TouchableOpacity>
                 </View>
-                <BottomNavBar/>
+                <View style={{
+                    flex: 2,
+                    backgroundColor: '#8C05D3',
+                    borderRadius: 20,
+                    marginBottom: 40,
+                    marginLeft: 60,
+                    marginRight: 60
+                }}>
+                    <TouchableOpacity style={{
+                        flex: 1,
+                        flexDirection: "row",
+                        justifyContent: "center",
+                        alignItems: "center"
+                    }}
+                        onPress={() => navigation.navigate('Give feedback')}>
+                        <Image style={{
+                            width: 10,
+                            height: 10,
+                            flex: 1,
+                            padding: 30
+                        }} source={require('../../assets/images/feedback.png')} />
+
+                        <Text style={{
+                            fontSize: 30,
+                            color: 'white',
+                            paddingLeft: 10,
+                            flex: 5,
+                            padding: 20,
+                            paddingTop: 12
+
+                        }}>
+                            Give your feedback
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         </ScrollView>
 

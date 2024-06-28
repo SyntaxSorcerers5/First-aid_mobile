@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button, Text, View } from 'react-native';
 import BottomNavBar from './src/components/bottomnav';
-import ComingSoon from './src/pages/ComingSoon';
-import Advisorbot from './src/pages/AdvisorBot';
+import Learn from './src/pages/Learn';
 import Notify from './src/pages/Notify';
 import Feedback2 from './src/pages/feedbacktwo';
 import RegisterEmergency from './src/pages/Emergencyregister';
@@ -18,8 +17,8 @@ import Fractures from './src/pages/Fractures';
 import Burn from './src/pages/Burn';
 import Drowning from './src/pages/Drowning';
 import Report from './src/pages/FirstAidReport';
-import Selectbot1 from './src/pages/sidenavbar';
-import RegisterUser   from "./src/pages/Generalregister";
+import RegisterUser from "./src/pages/Generalregister";
+import Feedback from './src/pages/feedbacktwo';
 
 
 
@@ -44,7 +43,7 @@ function App(): React.JSX.Element {
                     }}
                 />
 
-               
+
                 <Stack.Screen
                     name="Register Emergency"
                     component={RegisterEmergency}
@@ -70,8 +69,8 @@ function App(): React.JSX.Element {
                 />
 
                 <Stack.Screen
-                    name="Advisor bot select first aid"
-                    component={Advisorbot}
+                    name="Learn first aid"
+                    component={Learn}
                     options={{
                         headerShown: false
                     }}
@@ -132,6 +131,15 @@ function App(): React.JSX.Element {
                         headerShown: false
                     }}
                 />
+
+                <Stack.Screen
+                    name="Give feedback"
+                    component={Feedback}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+
 
                 <Stack.Screen
                     name="Register User"
