@@ -35,7 +35,7 @@ function Feedback2(): React.JSX.Element {
                         textAlign: 'center'
                     }}>Give Feedback</Text>
                 </View>
-                
+
                 {/* Description */}
                 <View style={{ flex: 1, backgroundColor: '#FFFFC6', paddingTop: 20 }}>
                     <Text style={{ color: 'black', fontSize: 20, paddingLeft: 20, flex: 1 }}>Your feedback matters!</Text>
@@ -61,8 +61,8 @@ function Feedback2(): React.JSX.Element {
                         flex: 1,
                         backgroundColor: '#8C05D3',
                         borderRadius: 20,
-                        marginVertical:1,
-                        marginHorizontal:1,
+                        marginVertical: 1,
+                        marginHorizontal: 1,
                     }} >
                         <TouchableOpacity style={{
                             flex: 1,
@@ -333,17 +333,6 @@ function Feedback2(): React.JSX.Element {
                         }}> Login</Text>
                     </TouchableOpacity>
                 </View>
-
-
-
-
-
-
-
-
-
-
-
             </View>
         </ScrollView>
 

@@ -114,7 +114,7 @@ function Selectbot({navigation}): React.JSX.Element {
                         justifyContent: "center",
                         alignItems: "center"
                     }}
-                        onPress={() => alert("hi 2")}>
+                        onPress={() => navigation.navigate('FirstaidReport')}>
                         <Image style={{
                             width: 10,
                             height: 10,

@@ -1,9 +1,10 @@
+import { NavigationContainer } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { View, Text, Pressable, Alert, Image, SafeAreaView, ScrollView, TextInput, TouchableOpacity } from 'react-native'
 
 
 
-function Advisorbot(): React.JSX.Element {
+function Advisorbot({navigation}): React.JSX.Element {
 
     function OnMessageChanged(changedMessage) {
         setMessage(changedMessage)
@@ -66,7 +67,7 @@ function Advisorbot(): React.JSX.Element {
                                 justifyContent: "center",
                                 alignItems: "center"
                             }}
-                                onPress={() => alert("hi 2")}>
+                                onPress={() => navigation.navigate('Bleed')}>
                                 <Text style={{
                                     fontSize: 30,
                                     color: 'white',
@@ -88,7 +89,7 @@ function Advisorbot(): React.JSX.Element {
                                 justifyContent: "center",
                                 alignItems: "center"
                             }}
-                                onPress={() => alert("hi 2")}>
+                                onPress={() => navigation.navigate('Faint')}>
                                 <Text style={{
                                     fontSize: 30,
                                     color: 'white',
@@ -113,7 +114,7 @@ function Advisorbot(): React.JSX.Element {
                                 justifyContent: "center",
                                 alignItems: "center"
                             }}
-                                onPress={() => alert("hi 2")}>
+                                onPress={() => navigation.navigate('Shocking')}>
                                 <Text style={{
                                     fontSize: 30,
                                     color: 'white',
@@ -135,7 +136,7 @@ function Advisorbot(): React.JSX.Element {
                                 justifyContent: "center",
                                 alignItems: "center"
                             }}
-                                onPress={() => alert("hi 2")}>
+                                onPress={() => navigation.navigate('Fract')}>
                                 <Text style={{
                                     fontSize: 30,
                                     color: 'white',
@@ -160,7 +161,7 @@ function Advisorbot(): React.JSX.Element {
                                 justifyContent: "center",
                                 alignItems: "center"
                             }}
-                                onPress={() => alert("hi 2")}>
+                                onPress={() => navigation.navigate('Burning')}>
                                 <Text style={{
                                     fontSize: 27,
                                     color: 'white',
@@ -182,7 +183,7 @@ function Advisorbot(): React.JSX.Element {
                                 justifyContent: "center",
                                 alignItems: "center"
                             }}
-                                onPress={() => alert("hi 2")}>
+                                onPress={() => navigation.navigate('Drown')}>
                                 <Text style={{
                                     fontSize: 30,
                                     color: 'white',

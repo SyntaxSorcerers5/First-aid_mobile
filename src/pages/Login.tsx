@@ -4,6 +4,7 @@ import Welcome from '../components/welcome';
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { useNavigation } from '@react-navigation/native';
 
+import { users } from '../utils/data';
 
 function Login({navigation}): React.JSX.Element {
 
@@ -18,6 +19,31 @@ function Login({navigation}): React.JSX.Element {
     const [username, setUsername] = useState()
     const [Password, setPassword] = useState()
 
+
+    function onClickLogin(){
+        const foundUser = users.find(user => user.username == username);
+
+        if( foundUser == undefined){
+            //  Did not find a matching user.
+            alert("User not found");
+            return
+        }
+
+        if(foundUser.password != Password){
+            alert("Invalid password");
+            return
+        }
+
+        if(foundUser.usertype == "general"){
+            navigation.navigate("Option selection")
+        }else {
+            alert("Emergy user apge");
+            // navigation.navigate("Option selection")
+        }
+
+
+
+    }
 
     return (
     
@@ -58,7 +84,8 @@ function Login({navigation}): React.JSX.Element {
                     placeholderTextColor={'#444'}
                 />
 
-     <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={() => navigation.navigate('Option selection')}>
+                <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }}
+                    onPress={onClickLogin}>
                     <Text style={{
                         backgroundColor: '#D21E5F',
                         color: 'white',
@@ -70,7 +97,11 @@ function Login({navigation}): React.JSX.Element {
                     }}> Login</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity onPress={() => navigation.navigate('Register As')}>
+                <TouchableOpacity onPress={() =>{
+                         navigation.navigate('Register As')
+
+                }
+                     }>
                     <Text style={{
                         backgroundColor: 'white',
                         color: '#8C05D3',

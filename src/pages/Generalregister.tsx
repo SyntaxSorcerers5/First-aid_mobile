@@ -1,39 +1,99 @@
 import React, { useState } from 'react';
-import { Button, Pressable, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Button, ScrollView, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import Welcome from '../components/welcome';
+import { users } from "../utils/data";
 
-
-function Registeruser({ navigation }): React.JSX.Element {
+function RegisterUser({ navigation }) {
+    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [registerError, setRegisterError] = useState("");
 
     function onUsernameChanged(changedUsername) {
-        setUsername(changedUsername)
-
+        setUsername(changedUsername);
     }
 
     function onEmailChanged(changedEmail) {
-        setEmail(changedEmail)
-
+        setEmail(changedEmail);
     }
-    function onPassswordChanged(changedPassword) {
-        setPassword(changedPassword)
 
+    function onPasswordChanged(changedPassword) {
+        setPassword(changedPassword);
     }
-    const [username, setUsername] = useState()
-    const [Email, setEmail] = useState()
-    const [Password, setPassword] = useState()
 
+    function validateEmail(email) {
+        const re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
 
+    function validatePassword(password) {
+        const re = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,}$/;
+        return re.test(password);
+    }
+
+    function onClickRegister() {
+        console.log("Registering");
+
+        if (!username) {
+            setRegisterError("Username is required");
+            return;
+        }
+
+        if (username.length < 6) {
+            setRegisterError("Username must be at least 6 characters");
+            return;
+        }
+
+        if (users.some(user => user.username === username)) {
+            setRegisterError("Username already exists");
+            return;
+        }
+
+        if (!email) {
+            setRegisterError("Email is required");
+            return;
+        }
+
+        if (!validateEmail(email)) {
+            setRegisterError("Invalid email address");
+            return;
+        }
+
+        if (users.some(user => user.email === email)) {
+            setRegisterError("Email already exists");
+            return;
+        }
+
+        if (!password) {
+            setRegisterError("Password is required");
+            return;
+        }
+
+        if (!validatePassword(password)) {
+            setRegisterError("Password must be at least 6 characters, and include upper and lower case letters and numbers");
+            return;
+        }
+
+        users.push({
+            username,
+            email,
+            password,
+            usertype: "general"
+        });
+
+        navigation.navigate("Home");
+    }
 
     return (
         <ScrollView>
-            <View style={{flex:1, backgroundColor: 'white' }} >
+            <View style={{ flex: 1, backgroundColor: 'white' }} >
                 <Welcome />
                 <Text style={{
                     color: '#D21E5F',
                     fontSize: 50,
                     marginTop: 50,
                     marginLeft: 20
-                }}> General User </Text>
+                }}>General User </Text>
                 <TextInput
                     style={{
                         backgroundColor: '#FFFFC6',
@@ -45,47 +105,50 @@ function Registeruser({ navigation }): React.JSX.Element {
                         paddingLeft: 10,
                         marginLeft: 20
                     }}
-
                     onChangeText={onUsernameChanged}
                     placeholder='Username'
                     placeholderTextColor={'#444'}
-
+                    value={username}
                 />
 
-                <TextInput style={{
-                    backgroundColor: '#FFFFC6',
-                    color: '#000',
-                    width: 390,
-                    height: 50,
-                    marginTop: 50,
-                    borderRadius: 20,
-                    paddingLeft: 10,
-                    marginLeft: 20
-                }}
-
+                <TextInput
+                    style={{
+                        backgroundColor: '#FFFFC6',
+                        color: '#000',
+                        width: 390,
+                        height: 50,
+                        marginTop: 50,
+                        borderRadius: 20,
+                        paddingLeft: 10,
+                        marginLeft: 20
+                    }}
                     onChangeText={onEmailChanged}
-                    placeholder='Email Adress'
+                    placeholder='Email Address'
                     placeholderTextColor={'#444'}
+                    value={email}
                 />
 
-                <TextInput style={{
-                    backgroundColor: '#FFFFC6',
-                    color: '#000',
-                    width: 390,
-                    height: 50,
-                    marginTop: 50,
-                    borderRadius: 20,
-                    paddingLeft: 10,
-                    marginLeft: 20
-                }}
-
-                    onChangeText={onPassswordChanged}
+                <TextInput
+                    style={{
+                        backgroundColor: '#FFFFC6',
+                        color: '#000',
+                        width: 390,
+                        height: 50,
+                        marginTop: 50,
+                        borderRadius: 20,
+                        paddingLeft: 10,
+                        marginLeft: 20
+                    }}
+                    onChangeText={onPasswordChanged}
                     placeholder='Password'
                     placeholderTextColor={'#444'}
+                    secureTextEntry={true}
+                    value={password}
                 />
-                <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={() => {
-                    navigation.navigate("Home")
-                }}>
+                
+                {registerError ? <Text style={{ color: "red", marginLeft: 20 }}>{registerError}</Text> : null}
+
+                <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={onClickRegister}>
                     <Text style={{
                         backgroundColor: '#D21E5F',
                         color: 'white',
@@ -93,15 +156,13 @@ function Registeruser({ navigation }): React.JSX.Element {
                         alignItems: 'center',
                         borderRadius: 40,
                         paddingLeft: 30,
-                        marginTop: 70
+                        marginTop: 70,
                     }}> Register</Text>
                 </TouchableOpacity>
-                <View style={{backgroundColor:'white',height:70}}/>
+                <View style={{ backgroundColor: 'white', height: 70 }} />
             </View>
         </ScrollView>
-
     );
 }
 
-
-export default Registeruser;
+export default RegisterUser;
