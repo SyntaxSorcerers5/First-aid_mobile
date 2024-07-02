@@ -42,9 +42,8 @@ function Login({ navigation }): React.JSX.Element {
 
         if (foundUser.usertype === "general") {
             navigation.navigate("Option selection");
-        } else {
-            alert("Emergency user page");
-            // navigation.navigate("Option selection")
+        } else if(foundUser.usertype === "emergency"){
+            navigation.navigate("Notification")
         }
     }
 
@@ -96,7 +95,7 @@ function Login({ navigation }): React.JSX.Element {
                             fontSize: 60,
                             alignItems: 'center',
                             borderRadius: 30,
-                            paddingLeft: 30,
+                            paddingLeft: 50,
                             marginTop: 80
                         }}
                     >

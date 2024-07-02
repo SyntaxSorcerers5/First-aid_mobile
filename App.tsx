@@ -19,6 +19,9 @@ import Drowning from './src/pages/Drowning';
 import Report from './src/pages/FirstAidReport';
 import RegisterUser from "./src/pages/Generalregister";
 import Feedback from './src/pages/feedbacktwo';
+import LoginEmergency from './src/pages/Log as emergency';
+import Logout from './src/pages/Log out';
+import ChatBot from './src/pages/chatbbot';
 
 
 
@@ -34,6 +37,7 @@ function App(): React.JSX.Element {
                         headerShown: false
                     }}
                 />
+
 
                 <Stack.Screen
                     name="Register As"
@@ -144,6 +148,20 @@ function App(): React.JSX.Element {
                 <Stack.Screen
                     name="Register User"
                     component={RegisterUser}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+                <Stack.Screen
+                    name="Log out"
+                    component={Logout}
+                    options={{
+                        headerShown: false
+                    }}
+                />
+                <Stack.Screen
+                    name="Chatbot"
+                    component={ChatBot}
                     options={{
                         headerShown: false
                     }}

@@ -78,7 +78,7 @@ function RegisterEmergency({ navigation }) {
             username,
             email,
             password,
-            usertype: "general"
+            usertype: "emergency"
         });
 
         navigation.navigate("Home");
