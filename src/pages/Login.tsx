@@ -8,6 +8,7 @@ import { users } from '../utils/data';
 function Login({ navigation }): React.JSX.Element {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
 
     function onUsernameChanged(changedUsername) {
         setUsername(changedUsername);
@@ -42,9 +43,13 @@ function Login({ navigation }): React.JSX.Element {
 
         if (foundUser.usertype === "general") {
             navigation.navigate("Option selection");
-        } else if(foundUser.usertype === "emergency"){
-            navigation.navigate("Notification")
+        } else if (foundUser.usertype === "emergency") {
+            navigation.navigate("Notification");
         }
+    }
+
+    function toggleShowPassword() {
+        setShowPassword(!showPassword);
     }
 
     return (
@@ -67,23 +72,32 @@ function Login({ navigation }): React.JSX.Element {
                     placeholderTextColor={'#444'}
                     value={username}
                 />
-                <TextInput
-                    style={{
-                        backgroundColor: '#FFFFC6',
-                        color: '#000',
-                        width: 390,
-                        height: 50,
-                        marginTop: 50,
-                        borderRadius: 20,
-                        paddingLeft: 10,
-                        marginLeft: 20
-                    }}
-                    onChangeText={onPasswordChanged}
-                    placeholder='Password'
-                    placeholderTextColor={'#444'}
-                    secureTextEntry={true}
-                    value={password}
-                />
+                <View style={{
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    backgroundColor: '#FFFFC6',
+                    color: '#000',
+                    width: 390,
+                    height: 50,
+                    marginTop: 50,
+                    borderRadius: 20,
+                    paddingLeft: 10,
+                    marginLeft: 20,
+                }}>
+                    <TextInput
+                        style={{ flex: 1 }}
+                        onChangeText={onPasswordChanged}
+                        placeholder='Password'
+                        placeholderTextColor={'#444'}
+                        secureTextEntry={!showPassword}
+                        value={password}
+                    />
+                    <TouchableOpacity onPress={toggleShowPassword} style={{ padding: 10 }}>
+                        <Text style={{ color: '#D21E5F', fontSize: 18 }}>
+                            {showPassword ? "Hide" : "Show"}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
                 <TouchableOpacity
                     style={{ marginLeft: 80, marginRight: 80 }}
                     onPress={onClickLogin}

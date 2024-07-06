@@ -7,6 +7,7 @@ function RegisterUser({ navigation }) {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
     const [registerError, setRegisterError] = useState("");
 
     function onUsernameChanged(changedUsername) {
@@ -84,6 +85,10 @@ function RegisterUser({ navigation }) {
         navigation.navigate("Home");
     }
 
+    function toggleShowPassword() {
+        setShowPassword(!showPassword);
+    }
+
     return (
         <ScrollView>
             <View style={{ flex: 1, backgroundColor: 'white' }} >
@@ -128,24 +133,37 @@ function RegisterUser({ navigation }) {
                     value={email}
                 />
 
-                <TextInput
-                    style={{
-                        backgroundColor: '#FFFFC6',
-                        color: '#000',
-                        width: 390,
-                        height: 50,
-                        marginTop: 50,
-                        borderRadius: 20,
-                        paddingLeft: 10,
-                        marginLeft: 20
-                    }}
-                    onChangeText={onPasswordChanged}
-                    placeholder='Password'
-                    placeholderTextColor={'#444'}
-                    secureTextEntry={true}
-                    value={password}
-                />
-                
+                <View style={{ position: 'relative', marginLeft: 20, marginTop: 50 }}>
+                    <TextInput
+                        style={{
+                            backgroundColor: '#FFFFC6',
+                            color: '#000',
+                            width: 390,
+                            height: 50,
+                            borderRadius: 20,
+                            paddingLeft: 10,
+                            paddingRight: 50,  // make space for the button
+                        }}
+                        onChangeText={onPasswordChanged}
+                        placeholder='Password'
+                        placeholderTextColor={'#444'}
+                        secureTextEntry={!showPassword}
+                        value={password}
+                    />
+                    <TouchableOpacity 
+                        onPress={toggleShowPassword} 
+                        style={{
+                            position: 'absolute',
+                            right: 25,
+                            top: 15,
+                        }}
+                    >
+                        <Text style={{ color: '#D21E5F', fontSize: 18 }}>
+                            {showPassword ? "Hide" : "Show"}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
+
                 {registerError ? <Text style={{ color: "red", marginLeft: 20 }}>{registerError}</Text> : null}
 
                 <TouchableOpacity style={{ marginLeft: 80, marginRight: 80 }} onPress={onClickRegister}>
