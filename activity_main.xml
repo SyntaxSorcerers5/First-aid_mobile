@@ -1,0 +1,37 @@
+activity_main.xml
+
+1. <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"
+ android:orientation="vertical"
+ android:padding="16dp">
+ <EditText
+ android:id="@+id/idEdtName"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:hint="Enter Name" />
+ <EditText
+ android:id="@+id/idEdtAge"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:hint="Enter Age"
+ android:inputType="number" />
+ <EditText
+ android:id="@+id/idEdtCity"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:hint="Enter City" />
+ <Button
+ android:id="@+id/idBtnSubmit"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:text="Submit" />
+ <Button
+ android:id="@+id/idBtnViewData"
+ android:layout_width="match_parent"
+ android:layout_height="wrap_content"
+ android:layout_marginTop="16dp"
+ android:text="View Data" />
+</LinearLayout>
